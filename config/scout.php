@@ -158,6 +158,6 @@ return [
             // Used for AWS
             'sigv4_enabled' => true,
             'sigv4_region' => 'eu-west-1',
-        ]
-    ]
+        ],
+    ],
 ];

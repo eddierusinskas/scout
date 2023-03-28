@@ -2,11 +2,11 @@
 
 namespace Laravel\Scout\Engines;
 
-use OpenSearch\Client as OpenSearch;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\LazyCollection;
 use Laravel\Scout\Builder;
 use Laravel\Scout\Jobs\RemoveableScoutCollection;
+use OpenSearch\Client as OpenSearch;
 
 class OpensearchEngine extends Engine
 {
@@ -178,7 +178,7 @@ class OpensearchEngine extends Engine
             'body' => [
                 'query' => [
                     'simple_query_string' => [
-                        'query' => !empty($query) ? "*$query*" : "*",
+                        'query' => ! empty($query) ? "*$query*" : "*",
                         'analyze_wildcard' => true,
                     ],
                 ],
@@ -291,7 +291,7 @@ class OpensearchEngine extends Engine
     {
         $this->openSearch->indices()->create([
             'index' => $name,
-            ...$options
+            ...$options,
         ]);
     }
 

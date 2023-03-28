@@ -154,9 +154,9 @@ class EngineManager extends Manager
 
         if (config('scout.opensearch.options.sigv4_enabled')) {
             $client = $client->setSigV4CredentialProvider([
-                    'key' => config('scout.opensearch.access_key'),
-                    'secret' => config('scout.opensearch.secret_key'),
-                ])
+                'key' => config('scout.opensearch.access_key'),
+                'secret' => config('scout.opensearch.secret_key'),
+            ])
                 ->setSigV4Region(config('scout.opensearch.options.sigv4_region'));
         } else {
             $client = $client->setBasicAuthentication(config('scout.opensearch.access_key'), config('scout.opensearch.secret_key'));
